@@ -2,8 +2,9 @@
   "name": "vendedor",
   "version": "0.0.0",
   "scripts": {
+    "start": "node server.js",
+   "postinstall": "ng build --aot --prod",
     "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,6 +24,7 @@
     "@angular/router": "~8.0.0",
     "@ng-bootstrap/ng-bootstrap": "^4.2.1",
     "bootstrap": "^4.3.1",
+    "express": "^4.17.1",
     "glyphicons": "^0.2.0",
     "jquery": "^3.4.1",
     "ng2-search-filter": "^0.5.1",
@@ -52,5 +54,10 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
+  },
+  "engines": {
+    "node": "12.4.0",
+    "npm": "6.9.0"
   }
+ 
 }
