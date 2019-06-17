@@ -1,0 +1,39 @@
+<main role="main">
+  <section class="my-4">
+    <div class="container">
+        <h2>Clientes</h2>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <form method="post" (ngSubmit)="criar()" [formGroup]="formulario">
+        <div class="form-group">
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome" value = '{{api?.nome}}'
+            class="form-control" placeholder="Nome"
+            formControlName="nome"/>
+        </div>
+
+        <div class="form-group">
+          <label for="cpf">CPF *</label>
+          <input type="cpf" id="cpf" name="cpf" value = "{{api?.cpf}}"
+            class="form-control" placeholder="Cpf"
+            formControlName="cpf"/>
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone *</label>
+          <input type="telefone" id="telefone" name="telefone" value = '{{api?.telefone}}'
+            class="form-control" placeholder="Telefone"
+            formControlName="telefone"/>
+        </div>
+
+        <button type="submit" class="btn btn-warning"
+          [disabled]="formulario.invalid">Update</button>
+
+          <button type="submit" class="btn btn-secondary"  [routerLink]="['/clienteListar']" >Cancelar</button>
+
+      </form>
+    </div>
+  </section>

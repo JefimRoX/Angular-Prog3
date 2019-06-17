@@ -1,0 +1,63 @@
+
+ <div class="container">
+<h3>Buscar</h3>
+<nav class="navbar" style="padding: 0px;padding-bottom: 10px">
+    
+  <input class="form-control" type="text" name="search" [(ngModel)]="filter">  <!-- Input que deve ser adicionado -->
+</nav>
+<div class="table-responsive">
+<table class="table table-hover">
+<thead class="thead-light">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Cpf</th>
+    <th scope="col">Telefone</th>
+    <th scope="col">Opçoes</th>
+  </tr>
+</thead>
+<tbody *ngFor = "let v of api | filter:filter; let i = index">
+  <tr>
+    <td> {{v.id}}</td>
+    <td> {{v.nome}}</td>
+    <td>{{v.cpf}}</td>
+    <td>{{v.telefone}}</td>
+    <td>
+
+
+
+        <ng-template #template>
+          <div class="modal-body text-center">
+            Exluir Cliente ?<br>
+            <hr>
+              id: {{v.id}}<br>
+              nome: {{v.nome}}<br>
+              cpf: {{v.cpf}}<br>
+              telefone: {{v.telefone}}<br>
+              <hr>
+            <button type="button" class="btn btn-danger" (click)="confirm(v.id)" >Sim</button>
+            &nbsp;
+            <button type="button" class="btn btn-secondary" (click)="decline()" >Não</button>
+          </div>
+        </ng-template> 
+
+
+        
+      <button type="button" class="btn btn-warning" [ngbTooltip]="editar" [routerLink]="['/clienteUpdate', v.id]" >
+        <span class=" glyphicon glyphicon-cog"></span> Editar
+      </button> &nbsp;
+    
+      <button type="button" class="btn btn-danger" [ngbTooltip]="excluir" (click)="openModal(template)">
+        <span class="glyphicon glyphicon-trash"></span> Excluir
+      </button>
+
+    
+
+    </td>
+  </tbody>
+</table>
+<ng-template #excluir >Clicke para exluir </ng-template>
+<ng-template #editar  >Clicke para editar </ng-template>
+
+</div>
+</div>

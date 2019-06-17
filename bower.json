@@ -1,0 +1,20 @@
+{
+  "name": "vendedor",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Jeferson <jefersonsilvasantos_@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.4.1"
+  }
+}

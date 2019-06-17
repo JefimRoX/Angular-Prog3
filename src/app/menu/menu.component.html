@@ -1,0 +1,83 @@
+
+   <div class="wrapper">
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>CRUD</h3>
+      </div>
+      
+      
+      <ul class="list-unstyled components">
+        <p></p>
+        <li >
+          <a role="button" data-toggle="collapse" class="dropdown-toggle"(click)="isCollapsed1 = !isCollapsed1"
+          [attr.aria-expanded]="!isCollapsed" aria-expanded ='Cliente' aria-expanded="false">Cliente</a>
+          
+          <ul class="collapse list-unstyled"  id="Cliente" [collapse]="!isCollapsed1" [isAnimated]="true" >
+            <li>
+              <a  routerLink="/clienteNovo">Novo</a>
+            </li>
+            <li>
+              <a routerLink="/clienteLista">Lista</a>
+            </li>
+            
+          </ul> 
+        </li>
+
+        <li >
+          <a role="button" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"(click)="isCollapsed2 = !isCollapsed2"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="z">Produto</a>
+          <ul class="collapse list-unstyled"   [collapse]="!isCollapsed2" [isAnimated]="true" >
+            <li>
+              <a href="#">Novo</a>
+            </li>
+            <li>
+              <a href="#">Lista</a>
+            </li>
+            
+          </ul> 
+        </li>
+        <li >
+          <a role="button" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"(click)="isCollapsed3 = !isCollapsed3"
+          [attr.aria-expanded]="!isCollapsed" aria-controls="z">Produto</a>
+          <ul class="collapse list-unstyled"   [collapse]="!isCollapsed3" [isAnimated]="true" >
+            <li>
+              <a href="#">Novo</a>
+            </li>
+            <li>
+              <a href="#">Lista</a>
+            </li>
+            
+          </ul> 
+        </li>
+
+      </ul>
+      
+      <ul class="list-unstyled CTAs">
+        <li>
+          <a href="#" class="download">Creditos</a>
+        </li>
+        
+      </ul>
+    </nav>
+
+
+    
+    
+    
+      
+   
+   
+   
+   
+   
+   
+   
+   <div class="cont" >
+
+    <router-outlet></router-outlet>
+
+   </div>
+   
+    </div>
+
+ 
