@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "start": "node server.js",
-   "postinstall": "ng build",
+    "postinstall": "ng build",
     "ng": "ng",
     "build": "ng build",
     "test": "ng test",
@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~8.0.0",
     "@angular/platform-browser-dynamic": "~8.0.0",
     "@angular/router": "~8.0.0",
+    "@ionic/storage": "^2.2.0",
     "@ng-bootstrap/ng-bootstrap": "^4.2.1",
     "bootstrap": "^4.3.1",
     "express": "^4.17.1",
@@ -59,5 +60,4 @@
     "node": "12.4.0",
     "npm": "6.9.0"
   }
- 
 }

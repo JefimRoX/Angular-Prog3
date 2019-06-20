@@ -1,9 +1,7 @@
-
-
 <main role="main">
   <section class="my-4">
     <div class="container">
-        <h2>Clientes{{sessao}}</h2>
+        <h2>Produto</h2>
         <div *ngFor="let alert of alerts" >
           <alert [type]="alert.type" style='position: fixed;' [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)"><strong> {{ alert.msg }}</strong></alert>
         </div>
@@ -21,17 +19,27 @@
         </div>
 
         <div class="form-group">
-          <label for="cpf">CPF *</label>
-          <input type="cpf" id="cpf" name="cpf"
-            class="form-control" placeholder="Cpf"
-            formControlName="cpf"/>
+          <label for="cpf">Quantidade *</label>
+          <input type="cpf" id="quantidade" name="quantidade"
+            class="form-control" placeholder="quantidade"
+            formControlName="quantidade"/>
         </div>
 
         <div class="form-group">
-          <label for="telefone">Telefone *</label>
-          <input type="telefone" id="telefone" name="telefone"
-            class="form-control" placeholder="Telefone"
-            formControlName="telefone"/>
+          <label for="telefone">Valor *</label>
+          <input type="telefone" id="valor" name="telefone"
+            class="form-control" placeholder="valor"
+            formControlName="valor"/>
+        </div>
+
+
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+     <select class="custom-select" formControlName="categoria.id">
+        
+      <option id="categoria" *ngFor = "let c of cat">{{c?.id}} - {{c?.nome}}</option>
+      
+    </select>
         </div>
 
         <button type="submit" class="btn btn-primary"

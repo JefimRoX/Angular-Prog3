@@ -16,6 +16,12 @@ import { FormsModule } from '@angular/forms';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ClienteNovoComponent } from './cliente/cliente-novo/cliente-novo.component';
 import { ClienteUpdateComponent } from './cliente/cliente-update/cliente-update.component';
+import { CategoriaNovoComponent } from './categoria/categoria-novo/categoria-novo.component';
+import { AlertModule } from 'ngx-bootstrap/alert';
+import { CategoriaListaComponent } from './categoria/categoria-lista/categoria-lista.component';
+import { ProdutoNovoComponent } from './produto/produto-novo/produto-novo.component';
+import { CategoriaUpdateComponent } from './categoria/categoria-update/categoria-update.component';
+
 
 
 
@@ -27,7 +33,12 @@ import { ClienteUpdateComponent } from './cliente/cliente-update/cliente-update.
     MenuComponent,
     ClienteListaComponent,
     ClienteNovoComponent,
-    ClienteUpdateComponent
+    ClienteUpdateComponent,
+    CategoriaNovoComponent,
+    CategoriaListaComponent,
+    ProdutoNovoComponent,
+    CategoriaUpdateComponent,
+   
     
   ],
   imports: [
@@ -42,7 +53,8 @@ import { ClienteUpdateComponent } from './cliente/cliente-update/cliente-update.
      BrowserAnimationsModule,
      Ng2SearchPipeModule,
      FormsModule,
-     ModalModule.forRoot()
+     ModalModule.forRoot(),
+     AlertModule.forRoot()
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]

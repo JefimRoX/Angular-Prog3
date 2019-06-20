@@ -1,0 +1,27 @@
+<main role="main">
+  <section class="my-4">
+    <div class="container">
+        <h2>Categoria</h2>
+        <div *ngFor="let alert of alerts" >
+            <alert [type]="alert.type" style='position: fixed;' [dismissOnTimeout]="alert.timeout" (onClosed)="onClosed(alert)"><strong> {{ alert.msg }}</strong></alert>
+          </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      
+    
+      <form method="post" (ngSubmit)="criar()" [formGroup]="formulario">
+        <div class="form-group" style='margin-top: 90px;'>
+          <label for="nome">Nome *</label>
+          <input type="text" id="nome" name="nome"
+            class="form-control" placeholder="Nome"
+            formControlName="nome"/>
+        </div>
+
+        <button type="submit" class="btn btn-primary"
+          [disabled]="formulario.invalid">Salvar</button>
+      </form>
+    </div>
+  </section>

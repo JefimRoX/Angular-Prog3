@@ -2,39 +2,47 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../api.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { AlertComponent } from 'ngx-bootstrap/alert/alert.component';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
-  selector: 'app-cliente-novo',
-  templateUrl: './cliente-novo.component.html',
-  styleUrls: ['./cliente-novo.component.css']
+  selector: 'app-produto-novo',
+  templateUrl: './produto-novo.component.html',
+  styleUrls: ['./produto-novo.component.css']
 })
-export class ClienteNovoComponent implements OnInit {
+export class ProdutoNovoComponent implements OnInit {
 
   alerts: any[] = [{
     type: '',
     msg: ``,
     timeout:0
   }];
-
+cat:any[];
   
   formulario: FormGroup;
-  client: string ='cliente';
+  client: string ='produto';
   constructor(private service: ApiService,
     private formBuilder: FormBuilder) { }
 
   ngOnInit() {
 
     this.configurarFormulario();
+    this.listar();
+ 
   }
 
+  listar(){
+
+    this.service.listar('categoria').subscribe(dados => this.cat = dados) 
+    
+    }
 
   configurarFormulario() {
     this.formulario = this.formBuilder.group({
 
       nome: [null, this.validarObrigatoriedade],
-      cpf: [null, [Validators.required]],
-      telefone: [null, [Validators.required]]
-
+      quantidade: [null, [Validators.required]],
+      valor: [null, [Validators.required]],
+ 
     });
   }
 
@@ -66,4 +74,3 @@ export class ClienteNovoComponent implements OnInit {
 
 
 }
-
